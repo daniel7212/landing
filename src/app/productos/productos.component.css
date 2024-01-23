@@ -17,3 +17,7 @@ span{
     display: flex; 
     align-items: center;
 }
+
+.carta{
+    cursor: pointer;
+}
