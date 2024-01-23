@@ -9,6 +9,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { BlogComponent } from './blog/blog.component';
 import { FooterComponent } from './footer/footer.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     HeaderComponent,
     ProductosComponent,
     BlogComponent,
-    FooterComponent
+    FooterComponent,
+    SobreNosotrosComponent
   ],
   imports: [
     BrowserModule,
