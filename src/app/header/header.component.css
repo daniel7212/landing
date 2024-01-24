@@ -1,20 +1,28 @@
-.logo{
-    height: 50px;
-    margin-right: 20px;
-    margin-left: 10px;
+.logo {
+  height: 50px;
+  margin-right: 20px;
+  margin-left: 10px;
 }
-.navbar{
-    background-color: #1c2331;
-    color: aliceblue;
-    position: fixed;
-    width: 100vw;
-   
+.navbar {
+  background-color: #1c2331;
+  color: aliceblue;
+  position: fixed;
+  width: 100vw;
+  z-index: 50;
+  top: 0%;
 }
-a{
-    color: aliceblue;
+a {
+  color: aliceblue;
 }
 
-button{
-    color: aliceblue;
-    border-color: aliceblue;
+button {
+  color: aliceblue;
+  border-color: aliceblue;
+}
+.menu{
+    padding-top: 80px;
+}
+
+.btn-success{
+  border: none;
 }

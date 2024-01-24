@@ -10,6 +10,10 @@ import { BlogComponent } from './blog/blog.component';
 import { FooterComponent } from './footer/footer.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +23,16 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
     ProductosComponent,
     BlogComponent,
     FooterComponent,
-    SobreNosotrosComponent
+    SobreNosotrosComponent,
+    DetalleProductoComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CarouselModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

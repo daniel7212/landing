@@ -1,0 +1,203 @@
+<section class="h-100 h-custom" style="background-color: #eee">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
+            <div class="row">
+              <div class="col-lg-7">
+                <h5 class="mb-3">
+                  <a href="#!" class="text-body"
+                    ><i class="fas fa-long-arrow-alt-left me-2"></i>Continuar
+                    compra</a
+                  >
+                </h5>
+                <hr />
+
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <div>
+                    <p class="mb-1">Carro de compras</p>
+                    <p class="mb-0">Tienes 4 productos en tu carro</p>
+                  </div>
+                </div>
+
+                <div class="card mb-3" *ngFor="let producto of productos, index as i">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between row">
+                      <div
+                        class="d-flex flex-row align-items-center col-12  col-5 col-md-5 row"
+                      >
+                        <div class="col-12 col-md-4">
+                          <img
+                            src="{{producto.imagen}}"
+                            class="img-fluid rounded-3"
+                            alt="Shopping item"
+                            style="width: 65px"
+                          />
+                        </div>
+                        <div class="col-12 col-md-8">
+                          <h5>{{producto.nombre}}</h5>
+                          <p class="small mb-0">{{producto.descripcion}}</p>
+                        </div>
+                      </div>
+
+                      <div
+                        class="d-flex flex-row align-items-center row col-12  col-7 col-md-7"
+                      >
+                        <div class="col-12 col-sm-12 col-4 col-md-5">
+                          <input
+                            type="number"
+                            id="typeNumber"
+                            class="form-control"
+                            value="{{producto.cantidad}}"
+                            (change)="cambiarCantidad(i)"
+                            [(ngModel)]="producto.cantidad"
+                            min="1"
+                          />
+                        </div>
+                        <div class="col-8 col-sm-8 col-4 col-md-5">
+                          <h5 class="mb-0"><span>$ </span>{{producto.precio}}</h5>
+                        </div>
+                        <div class="col-4 col-sm-4 col-4 col-md-2">
+                          <span class="material-symbols-outlined iconBasura" (click)="eliminarProducto(i)">
+                            delete
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="card bg-primary text-white rounded-3">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                      <h5 class="mb-0">Card details</h5>
+                      
+                    </div>
+
+                    <p class="small mb-2">Card type</p>
+                    <a href="#!" type="submit" class="text-white"
+                      ><img
+                        src="../../assets/logosMetodosPago/mastercard.png"
+                        class="tarjeta"
+                    /></a>
+                    <a href="#!" type="submit" class="text-white"
+                      ><img
+                        src="../../assets/logosMetodosPago/visa.png"
+                        class="tarjeta"
+                    /></a>
+                    <a href="#!" type="submit" class="text-white"
+                      ><img
+                        src="../../assets/logosMetodosPago/american.png"
+                        class="tarjeta"
+                    /></a>
+                    <a href="#!" type="submit" class="text-white"
+                      ><img
+                        src="../../assets/logosMetodosPago/paypal.png"
+                        class="tarjeta"
+                    /></a>
+
+                    <form class="mt-4">
+                      <div class="form-outline form-white mb-4">
+                        <input
+                          type="text"
+                          id="typeName"
+                          class="form-control form-control-lg"
+                          siez="17"
+                          placeholder="Nombre del titular"
+                        />
+                        <label class="form-label" for="typeName"
+                          >Nombre del titular</label
+                        >
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <input
+                          type="text"
+                          id="typeText"
+                          class="form-control form-control-lg"
+                          siez="17"
+                          placeholder="1234 5678 9012 3457"
+                          minlength="19"
+                          maxlength="19"
+                        />
+                        <label class="form-label" for="typeText"
+                          >Numero de la tarjeta</label
+                        >
+                      </div>
+
+                      <div class="row mb-4">
+                        <div class="col-md-6">
+                          <div class="form-outline form-white">
+                            <input
+                              type="text"
+                              id="typeExp"
+                              class="form-control form-control-lg"
+                              placeholder="MM/YYYY"
+                              size="7"
+                              id="exp"
+                              minlength="7"
+                              maxlength="7"
+                            />
+                            <label class="form-label" for="typeExp"
+                              >Expiración</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-outline form-white">
+                            <input
+                              type="password"
+                              id="typeText"
+                              class="form-control form-control-lg"
+                              placeholder="&#9679;&#9679;&#9679;"
+                              size="1"
+                              minlength="3"
+                              maxlength="3"
+                            />
+                            <label class="form-label" for="typeText">Cvv</label>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+
+                    <hr class="my-4" />
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Subtotal</p>
+                      <p class="mb-2">$4798.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Envío</p>
+                      <p class="mb-2">$100000</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-4">
+                      <p class="mb-2">Total(Incl. taxes)</p>
+                      <p class="mb-2">$4818.00</p>
+                    </div>
+
+                    <button type="button" class="btn btn-info btn-block btn-lg">
+                      <div class="d-flex justify-content-between">
+                        <span>$ {{valorTotal}}</span>
+                        <span
+                          >&nbsp;Checkout
+                        </span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
